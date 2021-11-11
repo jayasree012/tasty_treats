@@ -1,0 +1,151 @@
+/* LOGIN PAGE AND SIGNUP PAGE CSS */
+
+form:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.container1 { margin: 20px auto; position: relative; width: 900px; }
+
+#content {
+  background:#F7DAD9;
+  border: 1px solid #A2416B;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+#content h1 {
+  color: #A2416B;
+  font: bold 25px Helvetica, Arial, sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 20px;
+  margin: 10px 0 30px;
+}
+#content h1:before,
+#content h1:after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 10px;
+  width: 27%;
+}
+
+#content h1:after {
+ background: #A2416B;
+ background: -moz-linear-gradient(left,  #852747 0%, white 100%);
+ background: -webkit-linear-gradient(left,  #852747 0%,white 100%);
+ background: -o-linear-gradient(left,  #852747 0%,white 100%);
+ background: -ms-linear-gradient(left,  #852747 0%,white 100%);
+ background: linear-gradient(left,  #852747 0%,white 100%);
+    right: 0;
+}
+
+#content h1:before {
+  background: #A2416B;
+  background: -moz-linear-gradient(right,  #852747 0%, white 100%);
+  background: -webkit-linear-gradient(right,  #852747 0%, white 100%);
+  background: -o-linear-gradient(right,  #852747 0%, white 100%);
+  background: -ms-linear-gradient(right,  #852747 0%, white 100%);
+  background: linear-gradient(right,  #852747 0%, white 100%);
+    left: 0;
+}
+
+#content:after,
+#content:before {
+  background: #F7DAD9;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCE38A', endColorstr='#FCE38A',GradientType=0 );
+  border: 1px solid #A2416B;
+  content: "";
+  display:flex;
+  height: 100%;
+  left: -1px;
+  position: absolute;
+  width: 100%;
+}
+
+#content:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);
+  top: 0;
+  z-index: -1;
+}
+#content:before {
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+  top: 0;
+  z-index: -2;
+}
+
+#content form { margin: 0 20px; position: relative }
+
+/* #content form input[type="text"], */
+#content form input[type="email"],
+#content form input[type="password"] {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+  background: white url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+  border: 1px solid #c8c8c8;
+  color: #777;
+  font: 13px Helvetica, Arial, sans-serif;
+  margin: 0 0 10px;
+  padding: 15px 10px 15px 40px;
+  width: 80%;
+}
+#username1{
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+  background: white;
+  border: 1px solid #c8c8c8;
+  color: #777;
+  font: 13px Helvetica, Arial, sans-serif;
+  margin: 0 0 10px;
+  padding: 15px 10px 15px 40px;
+  width: 80%;
+
+}
+#content form input[type="email"]:focus,#content form input[type="text"]:focus,
+#texts:focus,
+#content form input[type="password"]:focus {
+  background-color: #fff;
+  border: 1px solid #A2416B;
+  outline: none;
+}
+#username { background-position: 10px 10px !important }
+#password { background-position: 10px -53px !important }
+
+#content form input[type="submit"] {
+  background-color: #A2416B;
+  border: #A2416B;
+  color:white;
+  border-radius: 40px;
+  cursor: pointer;
+  float: center;
+  font: bold 15px Helvetica, Arial, sans-serif;
+  height: 35px;
+  margin: 20px 0 35px 15px;
+  position: relative;
+  width: 120px;
+}
+#content form input[type="submit"]:hover {
+  color:#F56FAD;
+}

@@ -1,0 +1,68 @@
+<!-- TO VIEW ALL ITEMS-USERS -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/allproducts">ALL ITEMS</a></li>
+      <li id="categories"><a href="/usercategories">FILTER</a></li>
+      <li id="categories"><a href="/customize">CUSTOMIZE</a></li>
+        <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+      <li><a href="/cart/checkout"> <i class="fas fa-shopping-cart cart-logo"></i> My Cart
+        </a></li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BODY SECTION -->
+<body>
+  <h1>
+    <center>
+    </center>
+  </h1>
+  <br />
+  <br />
+  <!-- <form class="" action="/cakePage" method="post"> -->
+  <div class="row" style="display:flex; flex-wrap: wrap;">
+    <% products.forEach(function(items) { %>
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <div class="caption" style="text-align: center">
+          <h3><%= items.desc %></h3>
+        </div>
+        <div class=imagecon>
+          <img src="data:items/<%=items.img.contentType%>;base64,
+             <%=items.img.data.toString('base64')%>">
+        </div>
+        <div class="caption" style="text-align: center">
+          <h3 class="price-tag">Rs. <%= items.price %> /-</h3>
+        </div>
+        <center>
+          <a href="/add/<%= items.desc%>" class="btn">Add to cart</a>
+        </center>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  </body>
+
+</html>

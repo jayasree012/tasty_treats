@@ -1,0 +1,78 @@
+<!-- TO VIEW ALL CATEGORIES AND ADD IF NEEDED-ADMIN -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/admin_allproducts">ALL ITEMS</a></li>
+      <li id="allproducts"><a href="/additems">ADD ITEM</a></li>
+      <li id="categories"><a href="/categories">CATEGORIES</a></li>
+      <li id="viewfeedback"><a href="/adminviewfeedback">VIEW FEEDBACK</a></li>
+      <li id="viewfeedback"><a href="/adminviewcustomize">VIEW CUSTOMIZE</a></li>
+      <li id="categories"><a href="/adminvieworders">ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">Admin</a>
+      </li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<style>
+  a {
+    color: #A2416B;
+  }
+
+  a:hover {
+    color: #F56FAD
+  }
+
+  .cat {
+    border: solid 5px #A2416B;
+    margin-bottom: 15px;
+  }
+</style>
+
+</head>
+
+<!-- BODY SECTION -->
+
+<body>
+  <br />
+  <br />
+  <div class="menubar">
+    <section id="content">
+      <h4>Choose a Catergory</h4>
+      <br />
+      <%categories.forEach(function(cat){%>
+      <div class="cat">
+        <a href="/categories/<%=cat.title%>"> <%=cat.title%> </a>
+      </div>
+      <%});%>
+      <br />
+      <a class="btn" href="/categories/add-Category">Add a new category</a>
+      <br />
+
+      <br />
+    </section>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!-- TO VIEW ALL CUSTOMERS FEEDBACK-ADMIN -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/admin_allproducts">ALL ITEMS</a></li>
+      <li id="allproducts"><a href="/additems">ADD ITEM</a></li>
+      <li id="categories"><a href="/categories">CATEGORIES</a></li>
+      <li id="viewfeedback"><a href="/adminviewfeedback">VIEW FEEDBACK</a></li>
+      <li id="viewfeedback"><a href="/adminviewcustomize">VIEW CUSTOMIZE</a></li>
+      <li id="categories"><a href="/adminvieworders">ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">Admin</a>
+      </li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- BODY SECTION -->
+<body>
+  <h2 class="heading">
+    <center>
+      Users' Feedback
+    </center>
+  </h2>
+  <br />
+  <div>
+    <%Posts.forEach(function(post){%>
+    <div class="feedbackpost">
+      <h2>Name: <%=post.title%></h2>
+      <h3>Feedback: <%=post.content%></h3>
+      <h3>Rating: <%=post.star%> / 3</h3>
+      <br />
+    </div>
+    <%})%>
+  </div>
+
+</body>
+
+</html>

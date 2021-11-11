@@ -1,0 +1,71 @@
+<!-- TO VIEW  CATEGORIES -USER -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/allproducts">ALL ITEMS</a></li>
+      <li id="categories"><a href="/usercategories">FILTER</a></li>
+      <li id="categories"><a href="/customize">CUSTOMIZE</a></li>
+        <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+      <li><a href="/cart/checkout"> <i class="fas fa-shopping-cart cart-logo"></i>&nbsp; My cart
+        </a></li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  a {
+    color: #A2416B;
+  }
+
+  a:hover {
+    color: #F56FAD
+  }
+
+  .cat {
+    border: solid 5px #A2416B;
+    margin-bottom: 15px;
+  }
+</style>
+
+</head>
+
+<!-- BODY SECTION -->
+<body>
+  <br />
+  <br />
+  <div class="menubar">
+    <section id="content">
+      <h4>Choose a Catergory</h4>
+      <br />
+      <%categories.forEach(function(cat){%>
+      <div class="cat">
+        <a href="/usercategories/<%=cat.title%>"> <%=cat.title%> </a>
+      </div>
+      <%});%>
+      <br />
+    </section>
+  </div>
+</body>
+
+</html>

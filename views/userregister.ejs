@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+<div class="navigation">
+  <ul class="nav navbar-nav navbar-left">
+    <div class="title-logo">
+      <li>
+        <img class="logo" src="/cake.jpg" alt="cake logo">
+      </li>
+      <li>
+        <p class="bakery-name">Tasty Treats</p>
+      </li>
+    </div>
+  </ul>
+  <ul class="nav navbar-nav navbar-middle">
+    <!-- 6 -->
+    <li id="home"><a href="/">HOME</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li id="login"><a href="/userlogin">LOGIN</a></li>
+    <li id="signup"><a href="/userregister">SIGN UP</a></li>
+  </ul>
+</div>
+</nav>
+
+      <!-- BODY SECTION -->
+
+<body>
+  <br />
+  <br />
+  <div class="container2">
+    <section id="content">
+      <form action="/userregister" method="POST">
+        <h1>Sign Up Form</h1>
+        <div>
+          <input type="email" placeholder="Email" name="username" required="" id="username" />
+        </div>
+        <div>
+          <input type="password" placeholder="Password" name="password" required="" id="password" />
+        </div>
+        <div>
+          <input type="submit" value="Register" />
+        </div>
+      </form><!-- form -->
+    </section><!-- content -->
+  </div><!-- container -->
+</body>
+
+      </html>

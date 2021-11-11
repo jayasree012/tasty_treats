@@ -1,0 +1,77 @@
+<!-- TO VIEW ALL USERS FEEDBACK-USER -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <!-- 6 -->
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+
+
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- BODY SECTION -->
+
+<body>
+  <br />
+  <br />
+  <div class="container2">
+    <section id="content">
+      <form action="/feedback" method="POST">
+        <h1>Feedback</h1>
+        <div>
+          <input type="email" placeholder="Email" name="email" value="<%=userID%>" required="" id="username" />
+        </div>
+        <div>
+          <input type="text" placeholder="Name" name="postTitle" required="" id="username1" />
+        </div>
+        <div>
+          <textarea rows="3" cols="300" id="texts" class="form-control" placeholder="Type something ... " name="postBody" required=""></textarea>
+        </div>
+        <div class="stars">
+          <center>
+            <input class="star star-3" id="star-3" type="radio" value="3" name="star" />
+            <label class="star star-3" for="star-3"></label>
+            <input class="star star-2" id="star-2" type="radio" value="2" name="star" />
+            <label class="star star-2" for="star-2"></label>
+            <input class="star star-1" id="star-1" type="radio" value="1" name="star" />
+            <label class="star star-1" for="star-1"></label>
+          </center>
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+
+    </section>
+  </div>
+  <center>
+    <br />
+    <br />
+    <a class="btn" href="/viewfeedback">View Feeback</a>
+  </center>
+</body>
+
+</html>

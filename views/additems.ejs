@@ -1,0 +1,78 @@
+<!-- ADMIN SIDE - TO ADD NEW ITEMS -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/admin_allproducts">ALL ITEMS</a></li>
+      <li id="allproducts"><a href="/additems">ADD ITEM</a></li>
+      <li id="categories"><a href="/categories">CATEGORIES</a></li>
+      <li id="viewfeedback"><a href="/adminviewfeedback">VIEW FEEDBACK</a></li>
+      <li id="viewfeedback"><a href="/adminviewcustomize">VIEW CUSTOMIZE</a></li>
+      <li id="categories"><a href="/adminvieworders">ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">Admin</a>
+      </li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BODY SECTION -->
+
+<body>
+  <br />
+  <br />
+  <div class="container2">
+    <section id="content">
+      <form action="/additems" method="POST" enctype="multipart/form-data">
+        <h1>Add Item</h1>
+        <div>
+          <label for="name">Item Type</label><br />
+          <select id="name" value="" name="name" required>
+            <% categories.forEach(function(cat){%>
+            <option value="<%=cat.title%>"> <%=cat.title%> </option>
+            <%});%>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="desc">Item Name </label><br />
+          <textarea rows="1" cols="200" id="texts" class="form-control" placeholder="Name" name="desc" required=""></textarea>
+        </div>
+        <br />
+        <div>
+          <label for="price">Price of the item </label><br />
+          <input type="number" id="price" placeholder="Rs." value="" name="price" required>
+        </div>
+        <br />
+        <div>
+          <label for="image">Upload Image</label><br />
+          <input type="file" id="image" name="image" value="" class="doc" required>
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <br />
+    </section>
+  </div>
+</body>
+
+
+</html>

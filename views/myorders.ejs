@@ -1,0 +1,116 @@
+<!-- TO VIEW MY ORDERS-USER -->
+
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/allproducts">ALL ITEMS</a></li>
+      <li id="categories"><a href="/usercategories">FILTER</a></li>
+      <li id="categories"><a href="/customize">CUSTOMIZE</a></li>
+      <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+      <li><a href="/cart/checkout"> <i class="fas fa-shopping-cart cart-logo"></i> My cart
+        </a></li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  a {
+    color: #A2416B;
+  }
+
+  a:hover {
+    color: #F56FAD
+  }
+
+  .details {
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 30px;
+  }
+
+  .mobile {
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-bottom: 30px;
+  }
+</style>
+
+<!-- BODY SECTION -->
+
+<body>
+  <h1>
+    <center>
+
+    </center>
+  </h1>
+  <br />
+  <br />
+  <%Detail.forEach(function(detail){%>
+  <div class="customize">
+    <center>
+      <h4>Order ID : <%=detail._id%></h4>
+      <h4>UserID : <%=detail.userID%></h4>
+      <h5>Date : <%=detail.time%></h5>
+    </center>
+
+    <table class="table table-striped alignmiddle">
+      <tr>
+        <th>Item Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+      </tr>
+      <%var total=0%>
+      <%detail.cart.forEach(function(product){ %>
+      <%var sub=parseFloat(product.quantity * product.price).toFixed(2)%>
+      <%total+= +sub%>
+      <tr>
+        <td><%=product.name%></td>
+        <td><%=product.category%></td>
+        <td><%=product.price%></td>
+        <td><%=product.quantity%></td>
+        <td>
+          Rs <%=sub%>
+        </td>
+      </tr>
+      <%});%>
+    </table>
+    <center>
+      <b>Total Amount : </b> Rs <%=total%>
+      <h4>Delivery Address :<%=detail.address%></h4>
+      <h4>Phone number :<%=detail.phone%></h4>
+      <br />
+      <br />
+    </center>
+
+  </div>
+
+  <%});%>
+
+
+
+</body>
+
+
+</html>

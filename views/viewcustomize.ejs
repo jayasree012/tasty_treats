@@ -1,0 +1,64 @@
+<!-- TO VIEW CUSTOMIZED ORDERS-CUSTOMER -->
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/allproducts">ALL ITEMS</a></li>
+      <li id="categories"><a href="/usercategories">FILTER</a></li>
+      <li id="categories"><a href="/customize">CUSTOMIZE</a></li>
+        <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+      <li><a href="/cart/checkout"> <i class="fas fa-shopping-cart cart-logo"></i>&nbsp; My cart
+        </a></li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BODY SECTION -->
+<body>
+  <center>
+    <div>
+      <%Customize.forEach(function(customize){%>
+      <div class="customize">
+        <h3>Order Taken by (<%=userID%>)</h3>
+        <h3>Date :<%=customize.time%> </h3>
+        <hr />
+        <h4>Occasion: <%=customize.occasion%></h4>
+        <h4>Special: <%=customize.special%></h4>
+        <h4>Flavor: <%=customize.flavor%></h4>
+        <h4>Type: <%=customize.type%></h4>
+        <h4>Weight: <%=customize.weight%></h4>
+        <h4>Topping: <%=customize.topping%></h4>
+        <h4>To be written on cake: <%=customize.about%></h4>
+        <br />
+        <h3>We will get back to you</h3>
+      </div>
+      <%})%>
+    </div>
+
+  </center>
+  <br />
+
+
+
+</body>
+
+</html>

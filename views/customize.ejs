@@ -1,0 +1,118 @@
+<!-- TO MAKE CUSTOMIZED ORDERS-USER-->
+<%- include('partials/header') %>
+
+<!-- NAVBAR SECTION -->
+<nav class="navbar navbar-default">
+  <div class="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <div class="title-logo">
+        <li>
+          <img class="logo" src="/cake.jpg" alt="cake logo">
+        </li>
+        <li>
+          <p class="bakery-name">Tasty Treats</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-middle">
+      <li id="home"><a href="/">HOME</a></li>
+      <li id="allproducts"><a href="/allproducts">ALL ITEMS</a></li>
+      <li id="categories"><a href="/usercategories">FILTER</a></li>
+      <li id="categories"><a href="/customize">CUSTOMIZE</a></li>
+      <li id="categories"><a href="/myorders/<%=userID%>">MY ORDERS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><%=userID%></a>
+      </li>
+      <li><a href="/cart/checkout"><i class="fas fa-shopping-cart cart-logo"></i> My cart
+        </a></li>
+      <li><a href="/" class="">LOG OUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<body>
+  <br />
+  <br />
+  <div class="container2">
+    <section id="content">
+      <form action="/customize" method="POST">
+        <h1>CUSTOMIZE</h1>
+        <div>
+          <label for="name">Occasion</label><br />
+          <select id="name" value="" name="occasion" required>
+            <option value="newyear">New year</option>
+            <option value="wedding">Wedding</option>
+            <option value="birthday">Birthday</option>
+            <option value="valentine">Valentine</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="name">Special</label><br />
+          <select id="name" value="" name="special" required>
+            <option value="photo">Photo cakes</option>
+            <option value="heart">Heart shaped cakes</option>
+            <option value="designer">Designer cakes</option>
+            <option value="theme">Theme cakes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="name">Flavor</label><br />
+          <select id="name" value="" name="flavor" required>
+            <option value="blackforest">Black forest</option>
+            <option value="whiteforest">White forest</option>
+            <option value="mixedfriut">Mixed fruit</option>
+            <option value="chocotruffle">Choco Truffle</option>
+            <option value="redvelvet">Red velvet</option>
+            <option value="vanila">Vanila</option>
+            <option value="chocolate">Chocolate</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="name">Type</label><br />
+          <input id="With Egg" name="type" type="radio" value="With Egg">
+          <label>With Egg</label>
+          <input id="Eggless" name="type" type="radio" value="Eggless">
+          <label>Eggless</label>
+        </div>
+        <br />
+        <div>
+          <label for="weight">Weight</label><br />
+          <input type="number" id="weight" placeholder="kg." value="" name="weight" required>
+        </div>
+        <br />
+        <div>
+          <label for="name">Topping</label><br />
+          <select id="name" value="" name="topping" required>
+            <option value="freshfruits">Fresh fruits</option>
+            <option value="minichocolatecandies">Mini chocolate candies</option>
+            <option value="powderedsugar">Powdered sugar</option>
+            <option value="choppednuts">Chopped nuts</option>
+            <option value="candiesinshapes">Candies in shapes </option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="name">What should be written on the cake ... </label><br />
+          <textarea rows="3" cols="400" id="texts" class="form-control" placeholder="" name="postAbout" required=""></textarea>
+        </div>
+        <div>
+          <input type="submit">
+        </div>
+      </form>
+    </section>
+  </div>
+  <center>
+    <br />
+    <br />
+    <a class="btn" href="/viewcustomize/<%=userID%>">View Customize</a>
+    <br />
+    <br />
+  </center>
+</body>
+
+</html>
