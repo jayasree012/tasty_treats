@@ -1,6 +1,7 @@
 # tasty_treats
  Software Package Development Project
 
+
 The Online Bakery system is based on ordering and selling bakery items.
 It provides the customers online ordering facilities from their homes. 
 The system provides a convenient interface for User Registration, look through various categories, Items Search, filter items based on category and add items to the cart and place the order. 
@@ -55,3 +56,14 @@ userregister.ejs  - USER SIDE – User will be asked to enter email address an p
 viewcustomize.ejs – USER SIDE – To view the customized order given by them(user).
 
 viewfeedback.ejs – USER SIDE – To view all customer’s feedback.
+
+
+**Tools Used:**
+
+Front end:HTML,CSS
+
+Back end:Nodejs
+
+Database : MongoDB
+
+Atom/Visual Studio Code
