@@ -692,7 +692,7 @@ app.post('/cart/buynow', function(req, res) {
       cartdetail += "\n\nItem Name:" + items.name + "\nQty : " + items.quantity + "\nPrice of each item: " + items.price + "\nAmount : " + items.amount;
     });
     var mailOptions = {
-      from: '19z322@psgtech.ac.in',
+      from: 'bakerytastytreats5@gmail.com',
       to: user,
       subject: "Tasty Treats - Order Confirmation",
       text: " Order Confirmed ... Thanks for ordering :)\n\nOrder Details : \nMail id :" + user + "\nDate of order placed:" + day + "\nAddress:" + address + "\nMobile Number:" + phone + " " + "\n" + cartdetail + "\n\nTotal Amount:" + total
