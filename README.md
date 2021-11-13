@@ -1,7 +1,11 @@
 # tasty_treats
  Software Package Development Project
+ 
+**Demo link:**
+https://drive.google.com/file/d/1-r8oA7zd8fwc1QTOQ7xmWnpc8FkxmZTF/view?usp=sharing
 
 
+**Outline**
 The Online Bakery system is based on ordering and selling bakery items.
 It provides the customers online ordering facilities from their homes. 
 The system provides a convenient interface for User Registration, look through various categories, Items Search, filter items based on category and add items to the cart and place the order. 
@@ -67,3 +71,5 @@ Back end:Nodejs
 Database : MongoDB
 
 Atom/Visual Studio Code
+
+
